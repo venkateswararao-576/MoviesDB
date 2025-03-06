@@ -1,0 +1,24 @@
+.popular-container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+.movie-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 0px;
+}
+
+@media (max-width: 768px) {
+  .popular-container {
+    flex-direction: column;
+  }
+
+  .movie-container {
+    justify-content: center;
+  }
+}

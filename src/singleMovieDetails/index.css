@@ -1,0 +1,61 @@
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.single-movie {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+}
+.single-image {
+  width: 250px;
+  margin-right: 20px;
+}
+
+.genres {
+  display: flex;
+  align-items: center;
+}
+.movie-name {
+  color: rgb(255, 123, 0);
+  font-size: 32px;
+}
+.head {
+  font-family: roboto;
+  font-size: 30px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+.text {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+}
+.spantext {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Roboto;
+  color: black;
+}
+@media (max-width: 768px) {
+  .single-movie {
+    flex-direction: column;
+  }
+  .single-image {
+    width: 150px;
+  }
+  .head {
+    font-size: 20px;
+  }
+  .movie-name {
+    font-size: 20px;
+  }
+  .text {
+    font-size: 10px;
+  }
+  .spantext {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,54 @@
+.list-item {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 120px;
+  justify-content: space-between;
+  box-shadow: 1px 1px 4px 16px;
+  padding: 10px;
+}
+.card-img {
+  width: 100px;
+}
+.title {
+  font-size: 16px;
+  font-family: roboto;
+}
+.rating {
+  font-size: 13px;
+  font-family: Roboto;
+  margin: 0px;
+}
+.view-btn {
+  font-family: Roboto;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: cornflowerblue;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .list-item {
+    width: 40%;
+    margin: 10px;
+    box-shadow: 1px 2px 2px 5px;
+    height: 220px;
+  }
+  .card-img {
+    width: 80px;
+    align-self: center;
+  }
+  .title {
+    font-size: 10px;
+  }
+  .rating {
+    font-size: 10px;
+  }
+  .view-btn {
+    font-size: 10px;
+    padding: 5px;
+  }
+}

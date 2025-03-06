@@ -1,0 +1,18 @@
+.movie-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.top-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  .top-container {
+    flex-direction: column;
+  }
+}
