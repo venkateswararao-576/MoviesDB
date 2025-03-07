@@ -22,3 +22,15 @@
 .cast-image {
   width: 100px;
 }
+@media (max-width: 768px) {
+  .cast-list-item {
+    width: 100px;
+    height: 300px;
+  }
+  .cast-list {
+    justify-content: center;
+  }
+  .cast-image {
+    width: 80px;
+  }
+}

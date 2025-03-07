@@ -6,15 +6,15 @@ import Card from '../Card'
 import './index.css'
 
 class Home extends Component {
-  state = {movies: '', isloading: true}
+  state = {movies: '', isloading: true, page: 1}
 
   componentDidMount() {
     this.fetchdetails()
   }
 
   fetchdetails = async () => {
-    const api =
-      'https://api.themoviedb.org/3/movie/popular?api_key=fd6ce146824b2c63d33e5d1ca82d8e4a&language=en-US&page=1'
+    const {page} = this.state
+    const api = `https://api.themoviedb.org/3/movie/popular?api_key=fd6ce146824b2c63d33e5d1ca82d8e4a&language=en-US&page=${page}`
     const result = await fetch(api)
     const data = await result.json()
     if (result.ok) {
@@ -28,8 +28,19 @@ class Home extends Component {
     }
   }
 
+  previouspage = () => {
+    const {page} = this.state
+    if (page !== 1) {
+      this.setState(prev => ({page: prev.page - 1}), this.fetchdetails)
+    }
+  }
+
+  nextpage = () => {
+    this.setState(prev => ({page: prev.page + 1}), this.fetchdetails)
+  }
+
   render() {
-    const {isloading, movies} = this.state
+    const {isloading, movies, page} = this.state
     return (
       <div className="popular-container">
         {isloading ? (
@@ -41,6 +52,23 @@ class Home extends Component {
             ))}
           </ul>
         )}
+        <div className="pagination-container">
+          <button
+            onClick={this.previouspage}
+            className="pagination-btn"
+            type="button"
+          >
+            Prev
+          </button>
+          <p className="page-num">{page}</p>
+          <button
+            onClick={this.nextpage}
+            className="pagination-btn"
+            type="button"
+          >
+            Next
+          </button>
+        </div>
       </div>
     )
   }
